@@ -27,7 +27,7 @@ const options = {
         message: 'Please choose a date in the future',
         messageColor: 'white',
         backgroundColor: 'red',
-        iconUrl: './public/bi_x-octagon.svg',
+        iconUrl: '../public/bi_x-octagon.svg',
         position: 'topCenter',
       });
     }

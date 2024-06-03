@@ -30,7 +30,7 @@ formElem.addEventListener('submit', e => {
 
 function fulfilled(delayNum) {
   return iziToast.show({
-    iconUrl: './public/bi_check2-circle.svg',
+    iconUrl: '../public/bi_check2-circle.svg',
     backgroundColor: '#59a10d',
     message: `Fulfilled promise in ${delayNum}ms`,
     position: 'topCenter',
@@ -39,7 +39,7 @@ function fulfilled(delayNum) {
 
 function rejected(delayNum) {
   return iziToast.show({
-    iconUrl: './public/bi_x-octagon.svg',
+    iconUrl: '../public/bi_x-octagon.svg',
     backgroundColor: '#ef4040',
     message: `Rejected promise in ${delayNum}ms`,
     position: 'topCenter',
