@@ -2,6 +2,7 @@ import flatpickr from 'flatpickr';
 import 'flatpickr/dist/flatpickr.min.css';
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
+import immageUrl from '../public/bi_x-octagon.svg';
 
 let userSelectedDate;
 
@@ -27,7 +28,7 @@ const options = {
         message: 'Please choose a date in the future',
         messageColor: 'white',
         backgroundColor: 'red',
-        iconUrl: '/public/bi_x-octagon.svg',
+        iconUrl: immageUrl,
         position: 'topCenter',
       });
     }
