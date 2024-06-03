@@ -1,6 +1,7 @@
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
-import immageUrl from '../public/bi_check2-circle.svg';
+import immageUrlOK from '../public/bi_check2-circle.svg';
+import immageUrlErr from '../public/bi_x-octagon.svg';
 
 const formElem = document.querySelector('.form');
 
@@ -31,7 +32,7 @@ formElem.addEventListener('submit', e => {
 
 function fulfilled(delayNum) {
   return iziToast.show({
-    iconUrl: immageUrl,
+    iconUrl: immageUrlOK,
     backgroundColor: '#59a10d',
     message: `Fulfilled promise in ${delayNum}ms`,
     position: 'topCenter',
@@ -40,7 +41,7 @@ function fulfilled(delayNum) {
 
 function rejected(delayNum) {
   return iziToast.show({
-    iconUrl: immageUrl,
+    iconUrl: immageUrlErr,
     backgroundColor: '#ef4040',
     message: `Rejected promise in ${delayNum}ms`,
     position: 'topCenter',
