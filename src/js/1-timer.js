@@ -49,17 +49,18 @@ inputElem.addEventListener('focus', () => {
   flatpickr(inputElem, options);
 });
 
-const counter = timeInt => {
-  setInterval(() => {
+const onCounter = timeInt => {
+  const counter = setInterval(() => {
     inputElem.disabled = true;
+
     startBtn.disabled = true;
     startBtn.classList.add('disabled');
+
     timeInt -= 1000;
 
     if (timeInt < 0) {
       clearInterval(counter);
       inputElem.disabled = false;
-
       return;
     }
 
@@ -72,7 +73,7 @@ const counter = timeInt => {
 
 startBtn.addEventListener('click', () => {
   let allTime = userSelectedDate.getTime() - Date.now();
-  counter(allTime);
+  onCounter(allTime);
 });
 
 function convertMs(ms) {
