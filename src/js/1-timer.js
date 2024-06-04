@@ -49,27 +49,30 @@ inputElem.addEventListener('focus', () => {
   flatpickr(inputElem, options);
 });
 
-startBtn.addEventListener('click', () => {
-  let allTime = userSelectedDate.getTime() - Date.now();
-
-  const counter = setInterval(() => {
+const counter = timeInt => {
+  setInterval(() => {
     inputElem.disabled = true;
     startBtn.disabled = true;
     startBtn.classList.add('disabled');
-    allTime -= 1000;
+    timeInt -= 1000;
 
-    if (allTime < 0) {
+    if (timeInt < 0) {
       clearInterval(counter);
       inputElem.disabled = false;
 
       return;
     }
 
-    days.textContent = addZero(convertMs(allTime).days);
-    hours.textContent = addZero(convertMs(allTime).hours);
-    minutes.textContent = addZero(convertMs(allTime).minutes);
-    seconds.textContent = addZero(convertMs(allTime).seconds);
+    days.textContent = addZero(convertMs(timeInt).days);
+    hours.textContent = addZero(convertMs(timeInt).hours);
+    minutes.textContent = addZero(convertMs(timeInt).minutes);
+    seconds.textContent = addZero(convertMs(timeInt).seconds);
   }, 1000);
+};
+
+startBtn.addEventListener('click', () => {
+  let allTime = userSelectedDate.getTime() - Date.now();
+  counter(allTime);
 });
 
 function convertMs(ms) {
