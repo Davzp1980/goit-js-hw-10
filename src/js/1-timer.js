@@ -5,6 +5,7 @@ import 'izitoast/dist/css/iziToast.min.css';
 import immageUrl from '../public/bi_x-octagon.svg';
 
 let userSelectedDate;
+let counter = null;
 
 const options = {
   enableTime: true,
@@ -50,7 +51,7 @@ inputElem.addEventListener('focus', () => {
 });
 
 const onCounter = timeInt => {
-  const counter = setInterval(() => {
+  counter = setInterval(() => {
     inputElem.disabled = true;
 
     startBtn.disabled = true;
