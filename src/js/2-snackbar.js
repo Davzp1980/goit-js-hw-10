@@ -14,17 +14,17 @@ formElem.addEventListener('submit', e => {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         if (state === 'fulfilled') {
-          resolve(fulfilled(delay));
+          resolve(delay);
         } else {
-          reject(rejected(delay));
+          reject(delay);
         }
       }, delay);
     });
   };
 
   newPromise(delay)
-    .then(resolve => resolve)
-    .catch(reject => reject);
+    .then(delay => fulfilled(delay))
+    .catch(delay => rejected(delay));
   formElem.reset();
 });
 
