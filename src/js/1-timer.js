@@ -46,9 +46,7 @@ const seconds = document.querySelector('.value[data-seconds]');
 startBtn.disabled = true;
 startBtn.classList.add('disabled');
 
-inputElem.addEventListener('focus', () => {
-  flatpickr(inputElem, options);
-});
+flatpickr(inputElem, options);
 
 const onCounter = timeInt => {
   counter = setInterval(() => {
